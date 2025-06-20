@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/app_color_theme_6"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="质检工序" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_80"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etv_name"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="@dimen/dp_55"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_80"
+                    android:hint="请输入姓名"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textColor="#4F4F4F"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:backgroundTint="@null" />
+
+                <EditText
+                    android:id="@+id/etv_empNo"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="@dimen/dp_55"
+                    android:layout_gravity="center_horizontal"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                    android:hint="请输入工号"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textColor="#4F4F4F"
+                    android:textSize="24sp"
+                    app:backgroundTint="@null" />
+
+
+                <EditText
+                    android:id="@+id/etv_carNo"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="@dimen/dp_55"
+                    android:layout_gravity="center_horizontal"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                    android:hint="请输入车组号"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="#4F4F4F"
+                    android:textSize="24sp"
+                    app:backgroundTint="@null" />
+
+
+                <Button
+                    android:id="@+id/btn_pickCar"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/button_background"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:text="请选择车型"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:backgroundTint="@null" />
+
+                <!--选择作业信息-->
+                <Button
+                    android:id="@+id/btn_pickTask"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/button_background"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:text="请选择作业信息"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:backgroundTint="@null" />
+
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/btn_captureMedia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background"
+                        android:padding="@dimen/dp_10"
+                        android:text="拍摄"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:visibility="visible"
+                        app:backgroundTint="@null"
+                        app:layout_constraintStart_toStartOf="@id/btn_pickTask"
+                        app:layout_constraintTop_toBottomOf="@id/btn_pickTask" />
+
+
+                    <Button
+                        android:id="@+id/btn_goToMedia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background"
+                        android:padding="@dimen/dp_10"
+                        android:text="预览"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:visibility="visible"
+                        app:backgroundTint="@null"
+                        app:layout_constraintEnd_toEndOf="@id/btn_pickTask"
+                        app:layout_constraintTop_toBottomOf="@id/btn_pickTask" />
+                </LinearLayout>
+
+
+                <!--检查是否完成-->
+                <Button
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/button_background"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:text="确认完成"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:backgroundTint="@null" />
+
+                <!--生成license-->
+                <Button
+                    android:id="@+id/btn_generate"
+                    android:layout_width="@dimen/dp_270"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/button_background"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:text="生成license"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:backgroundTint="@null" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                android:background="@color/color_f0f2f4" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

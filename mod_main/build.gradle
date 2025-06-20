@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk rootProject.android.compileSdk
+
+    defaultConfig {
+        minSdk rootProject.android.minSdk
+        targetSdk rootProject.android.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        //ARouter
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+dependencies {
+    api project(':lib-camera-kit')
+
+//    api project(':lib-camera-kit')
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.depsLibs.coreKtx
+    implementation rootProject.depsLibs.appcompat
+    implementation rootProject.depsLibs.material
+    implementation rootProject.depsLibs.constraintlayout
+    compileOnly rootProject.depsLibs.liveDataKtx
+    compileOnly rootProject.depsLibs.viewModelKtx
+    compileOnly rootProject.depsLibs.navigationFragment
+    compileOnly rootProject.depsLibs.navigationUI
+
+    testCompileOnly rootProject.depsLibs.junit
+    androidTestCompileOnly rootProject.depsLibs.extJunit
+    androidTestCompileOnly rootProject.depsLibs.espressoCore
+
+    compileOnly rootProject.depsLibs.gson
+    compileOnly rootProject.depsLibs.flexbox
+    compileOnly rootProject.depsLibs.mmkv
+
+    compileOnly rootProject.depsLibs.refreshLayout
+    compileOnly rootProject.depsLibs.refreshHeader
+    compileOnly rootProject.depsLibs.refreshFooter
+
+    compileOnly rootProject.depsLibs.aroutreApi
+    kapt rootProject.depsLibs.arouterCompiler
+
+    compileOnly rootProject.depsLibs.tbssdk
+    compileOnly rootProject.depsLibs.rxPermission
+    compileOnly rootProject.depsLibs.rxjava
+    compileOnly rootProject.depsLibs.rxandroid
+
+    compileOnly project(path: ':lib_framework')
+    compileOnly project(path: ':lib_common')
+    compileOnly project(path: ':lib_network')
+    compileOnly project(path: ':lib_stater')
+    compileOnly project(path: ':lib_banner')
+    compileOnly project(path: ':lib_glide')
+    compileOnly project(path: ':lib_room')
+
+    // Add CameraX dependencies
+    def camerax_version = "1.2.0" // 示例版本，请根据最新版本替换
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-video:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
+    implementation "androidx.camera:camera-extensions:${camerax_version}"
+    //camera2utils end
+
+    implementation rootProject.depsLibs.glide
+    kapt rootProject.depsLibs.glideCompiler
+
+    implementation("org.tensorflow:tensorflow-lite:2.10.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.3.1")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.10.0")
+}

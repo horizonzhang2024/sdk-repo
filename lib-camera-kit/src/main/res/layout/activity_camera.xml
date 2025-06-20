@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    tools:context=".QuickCameraActivity">
+
+    <SurfaceView
+        android:id="@+id/viewSurface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/recording_indicator"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/red_dot"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/record_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@id/recording_indicator"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="visible"
+        tools:text="01:22:48"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/pauseResumeRecordButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/record_timer"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/icon_pause"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_corners"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/startRecordingButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:src="@mipmap/icon_start" />
+
+
+        <ImageButton
+            android:id="@+id/takePictureButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_capture" />
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/preViewButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignBottom="@id/buttonPanel"
+        android:layout_marginStart="15dp"
+        android:layout_toRightOf="@id/buttonPanel"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:src="@mipmap/icon_preview" />
+
+    <!-- 水印信息 -->
+    <TextView
+        android:id="@+id/waterMarkView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonPanel"
+        android:layout_marginStart="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        tools:text="2024 06 23 \n zhanchen " />
+</RelativeLayout>

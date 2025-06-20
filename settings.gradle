@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+
+    }
+}
+rootProject.name = "SumTea_Android"
+include ':app'
+include ':mod_main'
+//include ':mod_user'
+//include ':mod_search'
+//include ':mod_video'
+include ':lib_framework'
+include ':lib_common'
+include ':lib_network'
+include ':lib_stater'
+include ':lib_banner'
+include ':lib_glide'
+include ':lib_room'
+//include ':mod_demo'
+include ':lib_openCV_4.10'
+include ':lib-camera-kit'
