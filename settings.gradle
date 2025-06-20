@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 
     }
 }
-rootProject.name = "SumTea_Android"
+rootProject.name = "Horizon_CameraKit"
 include ':app'
 include ':mod_main'
 //include ':mod_user'
